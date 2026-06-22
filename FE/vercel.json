@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "http://168.144.38.133:8091/api/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "http://168.144.38.133:8091/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=YOUR_HOST;Port=5432;Database=workforce;Username=workforce;Password=YOUR_PASSWORD"
+  },
+  "Jwt": {
+    "Key": "CHANGE_ME_Min32CharactersSecretKey!!",
+    "Issuer": "WorkforceManagement.Api",
+    "Audience": "WorkforceManagement.Frontend",
+    "ExpiryMinutes": "480"
+  },
+  "Cors": {
+    "Origins": "https://your-frontend-domain.example"
+  }
+}

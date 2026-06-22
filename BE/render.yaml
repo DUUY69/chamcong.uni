@@ -1,0 +1,26 @@
+# Render Blueprint — Web Service (.NET 8)
+# https://render.com/docs/deploy-aspnet-core
+services:
+  - type: web
+    name: workforce-management-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:10000
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+        # PostgreSQL: Host=...;Port=5432;Database=workforce;Username=...;Password=...
+      - key: Jwt__Key
+        sync: false
+      - key: Jwt__Issuer
+        value: WorkforceManagement.Api
+      - key: Jwt__Audience
+        value: WorkforceManagement.Frontend
+      - key: Cors__Origins
+        sync: false

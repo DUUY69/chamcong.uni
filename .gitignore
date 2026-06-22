@@ -1,0 +1,26 @@
+# Root — chỉ BE + FE
+.DS_Store
+Thumbs.db
+
+# BE
+BE/bin/
+BE/obj/
+BE/publish/
+BE/out/
+BE/_decompiled/
+BE/.vs/
+BE/**/*.user
+
+# FE
+FE/node_modules/
+FE/dist/
+FE/dist*/
+FE/deploy/
+FE/deploy-fe.zip
+FE/.env
+FE/.env.*
+!FE/.env.example
+
+# BE secrets (dùng appsettings.Development.json local)
+BE/appsettings.Development.json
+BE/appsettings.Production.json
