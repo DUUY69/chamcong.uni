@@ -42,10 +42,14 @@ export default function Attendance() {
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [stores, setStores] = useState([]);
-  const [reviewRow, setReviewRow] = useState(null);
-  const [manualOpen, setManualOpen] = useState(false);
-  const [punchBusy, setPunchBusy] = useState(false);
-  const [punchMsg, setPunchMsg] = useState("");
+  const [pendingReview, setPendingReview] = useState([]);
+  const [dayBoard, setDayBoard] = useState([]);
+  const [myToday, setMyToday] = useState(null);
+  const [punching, setPunching] = useState(false);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviewModalOpen, setReviewModalOpen] = useState(false);
+  const [eodLoading, setEodLoading] = useState(false);
+  const [manualRow, setManualRow] = useState(null);
 
   const monthRange = (isoDate) => {
     const [y, m] = isoDate.split("-").map(Number);
